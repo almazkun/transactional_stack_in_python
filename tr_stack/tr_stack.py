@@ -1,11 +1,14 @@
+from collections import deque
+
 class TrStack:
     """Transactional stack implementation"""
 
     def __init__(self) -> None:
-        self.stack = [[]]
+        self.stack = deque()
         self.in_transaction = False
         self.pointer = 0
         self.committed = 0
+        self.stack.append(deque())
 
     def push(self, value):
         self.stack[self.pointer].append(value)
