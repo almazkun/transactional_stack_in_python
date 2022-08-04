@@ -1,5 +1,6 @@
 from collections import deque
 
+
 class TrStack:
     """Transactional stack implementation"""
 
@@ -32,10 +33,7 @@ class TrStack:
         Only when commit or rollback called the temp slacks will removed.
         """
         self.in_transaction = True
-
-        cur_stack = self.stack[self.pointer]
-
-        self.stack.append(cur_stack[:])
+        self.stack.append(self.stack[self.pointer].copy())
         self.pointer += 1
         self.committed += 1
 

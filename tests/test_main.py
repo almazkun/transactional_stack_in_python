@@ -1,5 +1,6 @@
 from unittest import TestCase
 from tr_stack import TrStack
+from collections import deque
 
 
 class TestMain(TestCase):
@@ -46,4 +47,4 @@ class TestMain(TestCase):
         self.assertEqual(tr_st.top(), 5)
         self.assertFalse(tr_st.rollback())
         self.assertFalse(tr_st.commit())
-        self.assertEqual(tr_st.stack, [[1, 2, 5]])
+        self.assertEqual(tr_st.stack, deque([deque([1, 2, 5])]))
