@@ -1,6 +1,3 @@
-# Transactional stack implementation in Python
-
-```py
 class TrStack:
     """Transactional stack implementation"""
 
@@ -67,4 +64,3 @@ class TrStack:
             if self.committed == 0:
                 self.in_transaction = False
             return True
-```
